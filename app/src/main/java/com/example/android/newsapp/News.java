@@ -25,10 +25,6 @@ public class News {
      */
     private String webUrl;
 
-    /**
-     * Thumbnail of the news
-     */
-    private String thumbnail;
 
 
 
@@ -37,14 +33,12 @@ public class News {
      * @param sectionName       is the name of the section (Politics, Science etc)
      * @param publicationDate   is the publication date of the news
      * @param webUrl            is the website URL to find more details about the news
-     * @param thumbnail          is the thumbnail of the news
      */
-    public News(String webTitle, String sectionName, String publicationDate, String webUrl, String thumbnail) {
+    public News(String webTitle, String sectionName, String publicationDate, String webUrl) {
         this.webTitle = webTitle;
         this.sectionName = sectionName;
         this.publicationDate = publicationDate;
         this.webUrl = webUrl;
-        this.thumbnail = thumbnail;
 
     }
 
@@ -64,7 +58,5 @@ public class News {
         return webUrl;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
-    }
+
 }

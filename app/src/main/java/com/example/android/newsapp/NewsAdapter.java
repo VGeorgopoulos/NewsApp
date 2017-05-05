@@ -51,15 +51,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
         //Find the news at the given position in the list of news
         News currentNews = getItem(position);
 
-        //Find the TextView with view ID thumbnail
-        ImageView thumbnailView = (ImageView) listItemView.findViewById(R.id.thumbnail);
-        if (!currentNews.getThumbnail().isEmpty() && currentNews.getThumbnail() != null) {
-            thumbnailView.setVisibility(View.VISIBLE);
-            thumbnailView.setImageURI(Uri.parse(currentNews.getThumbnail()));
-        } else {
-            thumbnailView.setVisibility(View.GONE);
-        }
-
 
         //Find the TextView with view ID section_name
         //and display section of the current news in the TextView

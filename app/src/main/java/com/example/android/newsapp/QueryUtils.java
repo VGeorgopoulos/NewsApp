@@ -38,7 +38,7 @@ public final class QueryUtils {
 
     /**
      * Create a private constructor because no one should ever create a {@link QueryUtils} object.
-     * This class is only meant to hold static varialbes and methods, which can be accessed
+     * This class is only meant to hold static variables and methods, which can be accessed
      * directly from the class name {@link QueryUtils} (and an object instance of {@link QueryUtils} is not needed).
      */
     private QueryUtils() {
@@ -76,7 +76,7 @@ public final class QueryUtils {
     }
 
     /**
-     * Make an HHTP request to the given URL and return a String as the response.
+     * Make an HTTP request to the given URL and return a String as the response.
      */
     private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
@@ -163,14 +163,9 @@ public final class QueryUtils {
                 String webUrl = currentNews.optString("webUrl");
 
 
-                JSONObject fields = currentNews.getJSONObject("fields");
-
-                //Extract the value for the key called "thumbnail"
-                String thumbnail = fields.getString("thumbnail");
-
                 //Create a new News object with the webTitle, webPublicationDate, webUrl, thumbnail
                 //from the JSON response.
-                News news = new News(webTitle, sectionName, webPublicationDate, webUrl, thumbnail);
+                News news = new News(webTitle, sectionName, webPublicationDate, webUrl);
 
                 //Add the new News to the list of news
                 newsList.add(news);
